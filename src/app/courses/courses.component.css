@@ -1,0 +1,18 @@
+.box {
+    border: 2px solid black; /* Black border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-align: center;
+    overflow: hidden; /* Ensures content stays within the box */
+    margin: 10px 0; 
+    background-color: antiquewhite;
+}
+
+.course-image img {
+    max-width: 100%; /* Ensures the image does not exceed the box width */
+    height: 100px; /* Keeps the image aspect ratio */
+    display: block; /* Removes extra spacing below the image */
+    border-radius: 5px; /* Optional: Rounds image corners */
+}

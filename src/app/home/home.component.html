@@ -1,0 +1,18 @@
+<section>
+    <img src="https://t4.ftcdn.net/jpg/05/06/47/83/360_F_506478367_PKcJr3mZMnZHwROfO4v70EOWiKiY9lVn.jpg" />
+    <div class="main-content">
+        <h1 class="mt-2">Explore amazing content</h1>
+        <a class="btn btn-lg btn-light mt-2">Course</a>&nbsp;
+        <a class="btn btn-lg btn-primary mt-2">Templates</a>
+    </div>
+</section>
+<h3 class="allCourses">All Courses</h3>
+<section>
+    <div class="courses-container">
+        @for(course of courses; track $index){
+        <app-courses [course]="course"></app-courses>
+        }@empty {
+            <div></div>
+        }
+    </div>
+</section>

@@ -1,0 +1,55 @@
+<!-- Toast Notification -->
+<div #liveToast class="toast align-items-center text-bg-success border-0 position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+        <div class="toast-body">
+            {{ message }}
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div>
+
+<!-- Course Form -->
+<div class="card">
+    <div class="card-header">Add Course</div>
+    <div class="card-body">
+        <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
+            
+            <!-- Course Name -->
+            <div class="mb-3">
+                <label for="title" class="form-label">Course Name</label>
+                <input type="text" class="form-control" id="title" name="title" #title="ngModel" [(ngModel)]="model.title" placeholder="Enter Title" required>
+                <div *ngIf="title.invalid && title.touched" class="text-danger">*Title is required.</div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" rows="3" id="description" name="description" #description="ngModel" [(ngModel)]="model.description" required></textarea>
+                <div *ngIf="description.invalid && description.touched" class="text-danger">*Description is required.</div>
+            </div>
+
+            <!-- Cost -->
+            <div class="mb-3">
+                <label for="Cost" class="form-label">Cost</label>
+                <input type="number" class="form-control" id="Cost" name="Cost" #Cost="ngModel" [(ngModel)]="model.Cost" placeholder="Enter Cost" required>
+                <div *ngIf="Cost.invalid && Cost.touched" class="text-danger">*Cost is required.</div>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="mb-3">
+                <label for="image">Choose an Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" (change)="onFileSelected($event)" required>
+                <div *ngIf="cover" class="mt-2">
+                    <img [src]="cover" alt="Selected Image" width="100">
+                </div>
+                <div *ngIf="showError" class="text-danger">*Image is required.</div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>
