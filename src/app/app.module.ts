@@ -9,7 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { CoursesComponent } from './courses/courses.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToastComponent } from './toasts/toast/toast.component';
-
+import { BenchmarkComponent } from './components/benchmark/benchmark.component';
+import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +19,13 @@ import { ToastComponent } from './toasts/toast/toast.component';
     HeaderComponent,
     CoursesComponent,
     FooterComponent,
-    ToastComponent
+    ToastComponent,
+    BenchmarkComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

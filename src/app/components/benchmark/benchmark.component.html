@@ -1,0 +1,7 @@
+<div class="container">
+    <h2>Benchmarking API POC</h2>
+    <button (click)="fetchBenchmarkingProducts()" [disabled]="isLoading">
+        {{isLoading ? 'Loading...' : 'Fetch Benchmarking Products'}}
+    </button>
+    <!-- <p *ngIf="benchmarkingProducts.length > 0">{{responseMessage}}</p> -->
+</div>
