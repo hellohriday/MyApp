@@ -10,7 +10,8 @@ import { CoursesComponent } from './courses/courses.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToastComponent } from './toasts/toast/toast.component';
 import { BenchmarkComponent } from './components/benchmark/benchmark.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { PaginationComponent } from './pagination/pagination.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +21,13 @@ import { HttpClientModule } from '@angular/common/http';
     CoursesComponent,
     FooterComponent,
     ToastComponent,
-    BenchmarkComponent
+    BenchmarkComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

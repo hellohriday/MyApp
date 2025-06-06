@@ -52,6 +52,45 @@ export class ApiService {
       )
     }
   }
+
+  get<T>(
+    title: string,
+    url: string,
+    isFullResponse?: boolean,
+    headerList?: Array<{ key: string, value: string }>,
+    showLoader: boolean = true
+  ): Observable<T> {
+
+    if (!url) return this.observableData<T>(null as unknown as T);
+
+    let headersValue = new HttpHeaders();
+    if (headerList) {
+      headerList.forEach((x) => {
+        headersValue = headersValue.append(x.key, x.value);
+      });
+    }
+
+    if (showLoader) {
+      headersValue = headersValue.append('showLoader', 'true');
+    }
+
+    let request;
+    if (isFullResponse) {
+      return this.http.get<T>(url).pipe(
+        catchError((error) => {
+          console.log('Error in API call', error);
+          return this.handleError(error);
+        })
+      )
+    } else {
+      return this.http.get<T>(url).pipe(
+        catchError((error) => {
+          console.log('Error in API call', error);
+          return this.handleError(error);
+        })
+      )
+    }
+  }
   
   private handleError(error: any) {
     if (error.status === 401) {

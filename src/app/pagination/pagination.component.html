@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Username <i class="fas fa-sort" (click)="sortUserName()"></i></th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">zipcode <i class="fas fa-sort" (click)="sortZipCode()"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{user?.id}}</th>
+        <td>{{user?.username}}</td>
+        <td>{{user?.name}}</td>
+        <td>{{user?.email}}</td>
+        <td>{{user?.address?.zipcode}}</td>
+      </tr>
+    </tbody>
+  </table>
